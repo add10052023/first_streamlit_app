@@ -19,6 +19,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected, ['Serving_Size','Serving_Gra
 streamlit.dataframe(fruits_to_show)
 
 for x in fruits_selected:
-  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/{x}")
+  fruityvice_response = requests.get(f"https://fruityvice.com/api/fruit/{x}")
   streamlit.dataframe(fruityvice_response.json())
+
 
