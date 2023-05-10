@@ -18,6 +18,7 @@ streamlit.text('Dietary information...')
 fruits_to_show = my_fruit_list.loc[fruits_selected, ['Serving_Size','Serving_Gram_Weight','Calories', 'Total_Fat_G','Total_Carbs_G)','Sugars_G','Protein_G']]
 streamlit.dataframe(fruits_to_show)
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.dataframe(fruityvice_response.json())
-streamlit.text(type(fruits_selected))
+for x in fruits_selected:
+  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/{x}")
+  streamlit.dataframe(fruityvice_response.json())
+
