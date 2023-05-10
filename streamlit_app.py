@@ -14,5 +14,5 @@ my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.co
 my_fruit_list.set_index('Fruit', inplace = True)
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index), ['Avocado','Strawberries'])
 streamlit.text('Dietary information...')
-fruits_to_show = my_fruit_list.loc[fruits_selected, ['Serving_Size','Serving_Gram_Weight','Calories', 'Total_Fat_G','Sugars_G','Protein_G']]
+fruits_to_show = my_fruit_list.loc[fruits_selected, ['Serving_Size','Serving_Gram_Weight','Calories', 'Total_Fat_G','Total_Carbs_G)','Sugars_G','Protein_G']]
 streamlit.dataframe(fruits_to_show)
