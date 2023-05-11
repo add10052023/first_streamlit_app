@@ -20,6 +20,6 @@ streamlit.dataframe(fruits_to_show)
 
 for x in fruits_selected:
   fruityvice_response = requests.get(f"https://fruityvice.com/api/fruit/{x}")
-  streamlit.dataframe(pandas.jason_normalize(fruityvice_response.json()))
+  streamlit.dataframe(pandas.json_normalize(fruityvice_response.json()))
 
 
